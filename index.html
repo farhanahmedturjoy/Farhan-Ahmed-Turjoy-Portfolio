@@ -29,7 +29,7 @@
         <div class="status-pill"><span class="status-dot"></span> OPEN TO THE RIGHT OPPORTUNITY</div>
         <p class="eyebrow">HELLO, I'M FARHAN</p>
         <h1>Making tech<br>work <span class="gradient-text">better.</span></h1>
-        <h2>Support Engineer <b>·</b> Network &amp; IT Support</h2>
+        <h2>Support Engineer <b>·</b> IT &amp; Network Operations</h2>
         <p class="hero-desc">I troubleshoot network issues, support people with technology, and help keep systems connected. Practical experience built in real ISP operations.</p>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#contact">Let's connect <span>↗</span></a>
@@ -48,8 +48,7 @@
         <div class="orbit orbit-three"></div>
         <div class="portrait-frame">
           <div class="portrait-inner"><img id="profile-photo" src="https://raw.githubusercontent.com/farhanahmedturjoy/Farhan-Ahmed-Turjoy-Portfolio/main/Farhan%20Ahmed%20Turjoy.jfif" alt="Farhan Ahmed Turjoy" loading="eager" fetchpriority="high"></div>
-          <label class="photo-upload" for="profile-photo-input" title="Upload a profile photo" aria-label="Upload a profile photo">+</label>
-          <input id="profile-photo-input" class="photo-upload-input" type="file" accept="image/*" aria-label="Choose a profile photo">
+          
         </div>
         <div class="orbit-chip chip-one"><span class="chip-symbol">⌁</span><span><b>NETWORKS</b><small>Connect · Monitor</small></span></div>
         <div class="orbit-chip chip-two"><span class="chip-symbol">⌘</span><span><b>IT SUPPORT</b><small>Diagnose · Resolve</small></span></div>
@@ -74,7 +73,7 @@
       <div class="section-label"><span>02</span> TECHNICAL TOOLKIT</div>
       <div class="section-head"><h2 class="section-title">What I work <span class="gradient-text">with.</span></h2><p>Tools and skills developed through day-to-day network operations and technical support.</p></div>
       <div class="skills-grid">
-        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Networking</h3><div class="tags"><span>MikroTik RouterOS</span><span>PPPoE</span><span>VLAN</span><span>IP Routing</span><span>GPON / EPON</span><span>OLT</span><span>ONU</span><span>L3 Switching</span><span>Switching</span><span>SFP</span><span>Fiber Optics</span></div></article>
+        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Networking</h3><div class="tags"><span>MikroTik RouterOS</span><span>PPPoE</span><span>VLAN</span><span>IP Routing</span><span>GPON / EPON</span><span>OLT Configuration</span><span>ONU Provisioning</span><span>Layer 3 (L3) Switching</span><span>Layer 2 (L2) Switching</span><span>SFP</span><span>Fiber Optics</span></div></article>
         <article class="skill-card"><div class="skill-icon">◉</div><h3>Monitoring &amp; Diagnostics</h3><div class="tags"><span>PRTG</span><span>The Dude</span><span>OLT Care</span><span>Ping</span><span>Traceroute</span><span>OTDR</span><span>OPM</span></div></article>
         <article class="skill-card"><div class="skill-icon">⌘</div><h3>ISP Operations</h3><div class="tags"><span>L1 / L2 Support</span><span>NOC Operations</span><span>Subscriber Support</span><span>Reseller Support</span><span>OLT Provisioning</span><span>Bandwidth Management</span><span>Ticket Management</span></div></article>
         <article class="skill-card"><div class="skill-icon">▣</div><h3>Tools &amp; Platforms</h3><div class="tags"><span>WinBox</span><span>PuTTY</span><span>Softify ISP Billing</span><span>Microsoft Office</span><span>Browser-based Tools</span></div></article>
@@ -100,8 +99,8 @@
 
 
     <section class="section wrap topology-section" id="topology">
-      <div class="section-label"><span>04</span> LIVE NETWORK TOPOLOGY</div>
-      <div class="section-head"><h2 class="section-title">How the <span class="gradient-text">network flows.</span></h2><p>A lightweight animated view of a typical ISP-to-subscriber path.</p></div>
+      <div class="section-label"><span>04</span> ISP NETWORK TOPOLOGY</div>
+      <div class="section-head"><h2 class="section-title">How the <span class="gradient-text">network flows.</span></h2><p>Follow a typical FTTH service path from the ISP core to the customer devices.</p></div>
       <div class="topology-panel" aria-label="Animated illustration of an ISP access network">
         <div class="topo-backbone" aria-label="Internet to access network">
           <div class="topo-node"><span class="topo-icon">🌐</span><b>INTERNET</b><small>Upstream</small></div>
@@ -110,13 +109,13 @@
           <span class="topo-link"><i></i></span>
           <div class="topo-node"><span class="topo-icon">🔀</span><b>SWITCH</b><small>Aggregation</small></div>
           <span class="topo-link"><i></i></span>
-          <div class="topo-node"><span class="topo-icon">🗄️</span><b>OLT</b><small>GPON / EPON</small></div>
+          <div class="topo-node"><span class="topo-icon">🗄️</span><b>OLT</b><small>GPON / EPON access</small></div>
           <span class="topo-link fiber"><i></i></span>
           <div class="topo-node"><span class="topo-icon">🔱</span><b>FIBER SPLITTER</b><small>Optical distribution</small></div>
         </div>
         <div class="topo-branch"><span class="branch-stem"></span><span class="branch-packet"></span></div>
         <div class="topo-customer">
-          <div class="topo-customer-title"><span class="topo-icon">🏠</span><b>CUSTOMER PREMISES</b><small>ONU / ONT → Wi-Fi router or LAN</small></div>
+          <div class="topo-customer-title"><span class="topo-icon">🏠</span><b>CUSTOMER PREMISES</b><small>Fiber drop → ONU / ONT → Wi-Fi router / LAN</small></div>
           <div class="topo-endpoints">
             <div class="topo-endpoint"><span>📶</span><b>Wi-Fi</b><small>Phone · Laptop</small></div>
             <div class="topo-endpoint"><span>🖥️</span><b>PC / LAN</b><small>Ethernet</small></div>
@@ -128,7 +127,7 @@
       </div>
     </section>
 \n    <section class="section wrap" id="projects">
-      <div class="section-label"><span>04</span> SELECTED PROJECTS</div>
+      <div class="section-label"><span>05</span> SELECTED PROJECTS</div>
       <div class="section-head"><h2 class="section-title">Built with <span class="gradient-text">curiosity.</span></h2><p>Academic projects from my Computer Science &amp; Engineering studies.</p></div>
       <div class="projects-grid">
         <article class="project-card"><span class="project-index">01 / COMPILER DESIGN</span><div class="project-art art-blue">C<span>↗</span></div><h3>Developing C Compiler from Scratch</h3><p>Created a basic C compiler using C and Python, converting C code into machine instructions.</p><div class="tags"><span>C</span><span>Python</span><span>Compiler Design</span></div></article>
@@ -138,7 +137,7 @@
     </section>
 
     <section class="section wrap" id="education">
-      <div class="section-label"><span>05</span> EDUCATION &amp; DEVELOPMENT</div>
+      <div class="section-label"><span>06</span> EDUCATION &amp; DEVELOPMENT</div>
       <div class="education-layout"><div><h2 class="section-title">Always <span class="gradient-text">learning.</span></h2><p class="education-intro">A strong academic foundation, paired with continuous technical development.</p></div>
         <div class="education-list">
           <div class="education-item"><span>2024</span><div><h3>BSc in Computer Science &amp; Engineering</h3><p>Dhaka International University</p><small>CGPA 3.16 / 4.00</small></div></div>
@@ -150,7 +149,7 @@
     </section>
 
     <section class="section wrap contact-section" id="contact">
-      <div class="section-label"><span>06</span> CONTACT</div>
+      <div class="section-label"><span>07</span> CONTACT</div>
       <div class="contact-panel"><div class="contact-orb"></div><p class="eyebrow">HAVE A ROLE OR PROJECT IN MIND?</p><h2>Let's make<br><span class="gradient-text">things work.</span></h2><p class="contact-copy">I'm open to discussing opportunities in technical support, network operations and IT services.</p>
         <div class="contact-links">
           <a href="mailto:farhanahmedturjoy@gmail.com"><small>EMAIL</small><b>farhanahmedturjoy@gmail.com</b><span>↗</span></a>
