@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+<title id="title">Noakhali Supernet Broadband</title><desc id="desc">Red and black Supernet Broadband logo with wireless signal symbol.</desc>
+<rect width="720" height="420" rx="24" fill="#fff"/>
+<g fill="none" stroke="#ed1c2b" stroke-width="19" stroke-linecap="round">
+<path d="M258 128a146 146 0 0 1 204 0"/><path d="M291 158a99 99 0 0 1 138 0"/><path d="M324 188a52 52 0 0 1 72 0"/>
+</g><path d="M359 210 406 52 374 218Z" fill="#171717"/><circle cx="360" cy="224" r="20" fill="#ed1c2b"/>
+<text x="360" y="327" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="82" font-weight="900" font-style="italic" letter-spacing="-5"><tspan fill="#ed1c2b">SUPER</tspan><tspan fill="#171717">NET</tspan></text>
+<text x="360" y="375" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" letter-spacing="12" fill="#111">BROADBAND</text>
+</svg>
