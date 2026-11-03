@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090d18">
-  <meta name="description" content="Farhan Ahmed Turjoy — Support Engineer and Customer Support Executive specialising in ISP network operations and IT support.">
+  <meta name="description" content="Farhan Ahmed Turjoy — Support Engineer specialising in ISP network operations and IT support.">
   <title>Farhan Ahmed Turjoy | Network & IT Support</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,7 @@
       <div class="section-label"><span>02</span> TECHNICAL TOOLKIT</div>
       <div class="section-head"><h2 class="section-title">What I work <span class="gradient-text">with.</span></h2><p>Tools and skills developed through day-to-day network operations and technical support.</p></div>
       <div class="skills-grid">
-        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Networking</h3><div class="tags"><span>MikroTik RouterOS</span><span>PPPoE</span><span>VLAN</span><span>IP Routing</span><span>GPON / EPON</span><span>OLT / ONU</span><span>SFP</span><span>Fiber Optics</span></div></article>
+        <article class="skill-card"><div class="skill-icon">⌁</div><h3>Networking</h3><div class="tags"><span>MikroTik RouterOS</span><span>PPPoE</span><span>VLAN</span><span>IP Routing</span><span>GPON / EPON</span><span>OLT</span><span>ONU</span><span>Switching</span><span>SFP</span><span>Fiber Optics</span></div></article>
         <article class="skill-card"><div class="skill-icon">◉</div><h3>Monitoring &amp; Diagnostics</h3><div class="tags"><span>PRTG</span><span>The Dude</span><span>OLT Care</span><span>Ping</span><span>Traceroute</span><span>OTDR</span><span>OPM</span></div></article>
         <article class="skill-card"><div class="skill-icon">⌘</div><h3>ISP Operations</h3><div class="tags"><span>L1 / L2 Support</span><span>NOC Operations</span><span>Subscriber Support</span><span>Reseller Support</span><span>OLT Provisioning</span><span>Bandwidth Management</span><span>Ticket Management</span></div></article>
         <article class="skill-card"><div class="skill-icon">▣</div><h3>Tools &amp; Platforms</h3><div class="tags"><span>WinBox</span><span>PuTTY</span><span>Softify ISP Billing</span><span>Microsoft Office</span><span>Browser-based Tools</span></div></article>
@@ -83,7 +83,7 @@
       <div class="section-label"><span>03</span> EXPERIENCE</div>
       <h2 class="section-title">Experience that <span class="gradient-text">connects.</span></h2>
       <article class="experience-card">
-        <div class="experience-heading"><div><span class="current"><i></i> CURRENT ROLE</span><h3>Support Engineer / Customer Support Executive</h3><p>Noakhali Supernet Broadband</p></div><span class="date">NOV 2024 — PRESENT</span></div>
+        <div class="experience-heading"><div><span class="current"><i></i> CURRENT ROLE</span><h3>Support Engineer</h3><p>Noakhali Supernet Broadband</p></div><span class="date">NOV 2024 — PRESENT</span></div>
         <div class="experience-divider"></div>
         <ul>
           <li>Deliver L1/L2 technical support for network connectivity, IP telephone, CCTV (NVR/DVR) and local routing issues for retail subscribers and resellers.</li>
@@ -100,17 +100,29 @@
     <section class="section wrap topology-section" id="topology">
       <div class="section-label"><span>04</span> LIVE NETWORK TOPOLOGY</div>
       <div class="section-head"><h2 class="section-title">How the <span class="gradient-text">network flows.</span></h2><p>A lightweight animated view of a typical ISP-to-subscriber path.</p></div>
-      <div class="topology-panel" role="img" aria-label="Animated network path from internet to core router, switch, OLT, ONU, customer router and connected devices">
-        <div class="topology-track">
-          <div class="topo-node"><span class="topo-icon">◎</span><b>INTERNET</b><small>Upstream</small></div>
-          <span class="topo-link"><i></i></span><div class="topo-node"><span class="topo-icon">⌘</span><b>CORE ROUTER</b><small>MikroTik</small></div>
-          <span class="topo-link"><i></i></span><div class="topo-node"><span class="topo-icon">▤</span><b>SWITCH</b><small>Distribution</small></div>
-          <span class="topo-link"><i></i></span><div class="topo-node"><span class="topo-icon">▥</span><b>OLT</b><small>GPON / EPON</small></div>
-          <span class="topo-link fiber"><i></i></span><div class="topo-node"><span class="topo-icon">⌁</span><b>ONU</b><small>Fiber endpoint</small></div>
-          <span class="topo-link"><i></i></span><div class="topo-node"><span class="topo-icon">⌘</span><b>HOME ROUTER</b><small>Wi-Fi / LAN</small></div>
-          <span class="topo-link"><i></i></span><div class="topo-node"><span class="topo-icon">▣</span><b>DEVICES</b><small>PC · Phone · TV</small></div>
+      <div class="topology-panel" aria-label="Animated illustration of an ISP access network">
+        <div class="topo-backbone" aria-label="Internet to access network">
+          <div class="topo-node"><span class="topo-icon">🌐</span><b>INTERNET</b><small>Upstream</small></div>
+          <span class="topo-link"><i></i></span>
+          <div class="topo-node"><span class="topo-icon">🛜</span><b>CORE ROUTER</b><small>Routing</small></div>
+          <span class="topo-link"><i></i></span>
+          <div class="topo-node"><span class="topo-icon">🔀</span><b>SWITCH</b><small>Aggregation</small></div>
+          <span class="topo-link"><i></i></span>
+          <div class="topo-node"><span class="topo-icon">🗄️</span><b>OLT</b><small>GPON / EPON</small></div>
+          <span class="topo-link fiber"><i></i></span>
+          <div class="topo-node"><span class="topo-icon">🔱</span><b>FIBER SPLITTER</b><small>Optical distribution</small></div>
         </div>
-        <div class="topology-foot"><span class="live-pulse"></span> PACKETS MOVING <span class="topo-note">Illustrative topology · not a live monitoring feed</span></div>
+        <div class="topo-branch"><span class="branch-stem"></span><span class="branch-packet"></span></div>
+        <div class="topo-customer">
+          <div class="topo-customer-title"><span class="topo-icon">🏠</span><b>CUSTOMER PREMISES</b><small>ONU / ONT → Wi-Fi router or LAN</small></div>
+          <div class="topo-endpoints">
+            <div class="topo-endpoint"><span>📶</span><b>Wi-Fi</b><small>Phone · Laptop</small></div>
+            <div class="topo-endpoint"><span>🖥️</span><b>PC / LAN</b><small>Ethernet</small></div>
+            <div class="topo-endpoint"><span>📹</span><b>IP CCTV</b><small>Network camera</small></div>
+            <div class="topo-endpoint"><span>☎️</span><b>IP Phone</b><small>VoIP</small></div>
+          </div>
+        </div>
+        <div class="topology-foot"><span class="live-pulse"></span> DATA FLOW ANIMATION <span class="topo-note">Typical ISP FTTH layout · illustrative, not live telemetry</span></div>
       </div>
     </section>
 \n    <section class="section wrap" id="projects">
