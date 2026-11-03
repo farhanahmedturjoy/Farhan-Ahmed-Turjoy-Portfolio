@@ -47,3 +47,47 @@ if (!reduceMotion) {
   });
 }
 
+
+
+/* Lightweight interaction layer */
+(() => {
+  if (document.querySelector('.scroll-progress')) return;
+  const bar=document.createElement('div');
+  bar.className='scroll-progress';
+  bar.setAttribute('aria-hidden','true');
+  bar.innerHTML='<span></span>';
+  document.body.prepend(bar);
+
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking=false;
+  const updateProgress=()=>{
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    document.documentElement.style.setProperty('--scroll-progress',max>0?String(window.scrollY/max):'0');
+    ticking=false;
+  };
+  window.addEventListener('scroll',()=>{
+    if(!ticking){window.requestAnimationFrame(updateProgress);ticking=true;}
+  },{passive:true});
+  updateProgress();
+
+  if(reduced) return;
+  if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+    window.addEventListener('pointermove',e=>{
+      document.documentElement.style.setProperty('--pointer-x',e.clientX+'px');
+      document.documentElement.style.setProperty('--pointer-y',e.clientY+'px');
+    },{passive:true});
+
+    const cards=document.querySelectorAll('.skill-card,.project-card,.experience-card,.education-item');
+    cards.forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width;
+        const y=(e.clientY-r.top)/r.height;
+        const ry=(x-.5)*5;
+        const rx=(.5-y)*4;
+        card.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
+      });
+      card.addEventListener('pointerleave',()=>{card.style.transform='';});
+    });
+  }
+})();
