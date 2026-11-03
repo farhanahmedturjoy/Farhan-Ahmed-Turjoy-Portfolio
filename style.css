@@ -499,3 +499,18 @@ main,.header,.footer{position:relative;z-index:1}
   .portrait-stage{transform:scale(.9)}
   .portrait-frame{width:min(255px,68vw);height:min(255px,68vw)}
 }
+
+
+/* Smoothness recovery + smaller portrait (Nov 2026)
+   Keep motion purposeful, but avoid expensive always-on layers and transform conflicts. */
+.portrait-frame{width:min(270px,62vw)!important;height:min(270px,62vw)!important}
+@media(max-width:800px){.portrait-frame{width:min(235px,58vw)!important;height:min(235px,58vw)!important}}
+@media(max-width:480px){.portrait-frame{width:min(210px,56vw)!important;height:min(210px,56vw)!important}}
+.portrait-stage{transform:none!important}
+.skill-card,.project-card,.experience-card,.education-item,.contact-link,.topology-panel,.workflow-node{will-change:auto!important}
+body:before{animation:none!important;opacity:.09}
+body:after{display:none!important}
+.section-title{animation:none!important}
+.reveal{transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)!important}
+.reveal:not(.in-view){transform:translate3d(0,12px,0)!important}
+@media(prefers-reduced-motion:reduce){.portrait-stage,.portrait-frame,.orbit,.orbit-one span,.orbit-two span,.orbit-three,.stage-glow{animation:none!important}}
