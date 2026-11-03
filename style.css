@@ -486,3 +486,16 @@ main,.header,.footer{position:relative;z-index:1}
  .other-sites .remote-choyani:before{background:#b17affbb}
 }
 @media(prefers-reduced-motion:reduce){.remote-route{animation:none!important}.remote-packet{display:none}}
+
+
+/* Reduce hero portrait footprint while keeping its orbit details balanced */
+.portrait-stage{transform:scale(.82);transform-origin:center center}
+.portrait-frame{width:min(330px,72vw);height:min(330px,72vw)}
+@media(max-width:800px){
+  .portrait-stage{transform:scale(.88);margin-top:-8px;margin-bottom:-8px}
+  .portrait-frame{width:min(290px,70vw);height:min(290px,70vw)}
+}
+@media(max-width:480px){
+  .portrait-stage{transform:scale(.9)}
+  .portrait-frame{width:min(255px,68vw);height:min(255px,68vw)}
+}
