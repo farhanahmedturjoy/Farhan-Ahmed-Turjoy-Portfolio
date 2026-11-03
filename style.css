@@ -514,3 +514,41 @@ body:after{display:none!important}
 .reveal{transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)!important}
 .reveal:not(.in-view){transform:translate3d(0,12px,0)!important}
 @media(prefers-reduced-motion:reduce){.portrait-stage,.portrait-frame,.orbit,.orbit-one span,.orbit-two span,.orbit-three,.stage-glow{animation:none!important}}
+
+
+/* Carlos Dribbble-inspired art direction: warm charcoal, bold editorial type,
+   orange highlights and generous, polished spacing — adapted for network engineering. */
+:root{
+ --bg:#08080d;--panel:#121218;--panel2:#19191f;--text:#f5f3f0;--muted:#a5a3ad;
+ --line:rgba(220,216,225,.13);--cyan:#f86d09;--blue:#efa649;--violet:#a35623;
+ --mint:#efa649;--font:'DM Sans',sans-serif;--display:'Manrope',sans-serif;
+}
+body{background:#08080d;color:#f5f3f0}
+body:before{opacity:.045;background-size:70px 70px}
+.header{background:rgba(8,8,13,.88);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand-icon{background:#f86d09;color:#08080d;border-radius:8px}
+.nav a:hover,.nav .nav-cta{color:#f86d09}
+.hero{min-height:calc(100vh - 76px);padding-top:clamp(72px,10vh,130px);padding-bottom:100px}
+.hero h1{font-size:clamp(54px,7.7vw,104px);letter-spacing:-.075em;line-height:.99}
+.gradient-text,.soft-gradient{background:linear-gradient(100deg,#f86d09,#efa649);-webkit-background-clip:text;background-clip:text;color:transparent}
+.status-pill{border-color:#f86d0940;background:#f86d0910}
+.status-dot{background:#efa649;box-shadow:0 0 12px #f86d09}
+.btn-primary{background:#f86d09;color:#08080d;border-color:#f86d09}
+.btn-primary:hover{background:#efa649}
+.btn-outline:hover{border-color:#f86d09;color:#efa649}
+.portrait-frame{border-radius:26px;background:linear-gradient(145deg,#f86d09,#efa649,#a35623)!important;box-shadow:0 0 36px #f86d0920!important}
+.portrait-inner,.portrait-inner img{border-radius:20px}
+.orbit-chip{border-color:#f86d0938;background:#141319}
+.section-label span{color:#f86d09}
+.section-title{letter-spacing:-.055em}
+.skill-card,.project-card,.experience-card,.education-item,.topology-panel,.workflow-node{background:linear-gradient(145deg,#15151c,#101015);border-color:rgba(255,255,255,.09);border-radius:18px}
+.skill-card:hover,.project-card:hover,.experience-card:hover,.education-item:hover{border-color:#f86d0960;box-shadow:0 20px 48px #0006,0 0 24px #f86d090b}
+.tags span{border-color:#ffffff17;background:#ffffff06}
+.tags span:hover{border-color:#f86d09;color:#efa649;background:#f86d0910}
+.topo-node,.topo-endpoint,.pop-node{background:#15151c;border-color:#f86d0926}
+.topo-icon,.workflow-icon{color:#efa649}
+.contact-panel{background:#121218;border-color:#ffffff12}
+.contact-links .contact-link:hover{border-color:#f86d0960}
+.scroll-progress span{background:linear-gradient(90deg,#f86d09,#efa649,#a35623)}
+@media(max-width:800px){.hero{padding-top:55px}.hero h1{font-size:clamp(50px,12vw,76px)}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
