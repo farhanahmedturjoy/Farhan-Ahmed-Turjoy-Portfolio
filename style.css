@@ -120,3 +120,25 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 
 /* Public portfolio: profile image is owner-managed in the repository, never visitor-editable. */
 .photo-upload,.photo-upload-input{display:none!important}
+
+
+/* Refined red accent: slim edge stripes on information cards and a red portrait ring */
+:root{--accent-red:#ff4058;--accent-red-soft:rgba(255,64,88,.34)}
+.skill-card,.project-card,.experience-card,.topo-customer,.topo-endpoint,.contact-links a,.certifications div{
+  border-left:2px solid var(--accent-red-soft);
+}
+.skill-card:hover,.project-card:hover,.topo-endpoint:hover{
+  border-left-color:var(--accent-red);
+}
+.experience-card{border-left:2px solid var(--accent-red)}
+.topo-customer{border-left:2px solid var(--accent-red-soft)}
+.contact-links a:hover{border-left-color:var(--accent-red)}
+.portrait-frame{
+  background:conic-gradient(from 20deg,#ff4058,#ff7585,#d51e42,#ff4058);
+  box-shadow:0 0 30px rgba(255,64,88,.22),0 0 75px rgba(255,64,88,.12);
+}
+.portrait-frame:before{border-color:rgba(255,64,88,.48)}
+.portrait-inner{border-color:#ff4058}
+.orbit-one{border-left-color:rgba(255,64,88,.75)}
+.orbit-one span{background:var(--accent-red);box-shadow:0 0 18px var(--accent-red)}
+@media(prefers-reduced-motion:reduce){.portrait-frame,.portrait-frame:before{animation:none!important}}
