@@ -412,3 +412,52 @@ main,.header,.footer{position:relative;z-index:1}
 .btn:hover:after{left:125%}
 @media(max-width:800px){body:after{display:none}body:before{opacity:.08}}
 @media(prefers-reduced-motion:reduce){body:before,.section-title{animation:none!important}.scroll-progress{display:none}.skill-card,.project-card,.experience-card,.education-item{will-change:auto}}
+
+
+/* Live bidirectional traffic animation in the ISP topology */
+.traffic-split{
+  width:min(760px,88%);height:76px;top:0;margin:0 auto;
+  border:0;position:relative;overflow:visible;
+}
+.traffic-split:before{
+  content:"";position:absolute;left:50%;top:0;width:1px;height:34px;
+  background:linear-gradient(to bottom,rgba(81,226,237,.1),rgba(81,226,237,.85));
+  box-shadow:0 0 10px #51e2ed77;
+}
+.traffic-split:after{
+  content:"";position:absolute;left:25%;right:25%;top:33px;height:1px;
+  background:linear-gradient(90deg,#51e2ed22,#51e2edaa,#51e2ed22);
+  box-shadow:0 0 9px #51e2ed66;
+}
+.traffic-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:2}
+.traffic-route{fill:none;stroke:#51e2ed66;stroke-width:2;stroke-dasharray:5 8;vector-effect:non-scaling-stroke;animation:routeDash 1.5s linear infinite}
+@keyframes routeDash{to{stroke-dashoffset:-26}}
+.traffic-packet{fill:#bafaff;stroke:#51e2ed;stroke-width:2;filter:drop-shadow(0 0 5px #51e2ed) drop-shadow(0 0 11px #51e2edaa)}
+.traffic-packet.packet-up{fill:#c7a7ff;stroke:#b17aff;filter:drop-shadow(0 0 5px #b17aff) drop-shadow(0 0 11px #b17affaa)}
+.traffic-packet.packet-delay{opacity:.95}
+.traffic-legend{
+  position:absolute;left:50%;bottom:-5px;transform:translate(-50%,100%);
+  display:flex;align-items:center;gap:7px;white-space:nowrap;
+  color:#8fa5c4;font:700 8px var(--display);letter-spacing:1px;
+  background:#0c1523;border:1px solid #5a7d9b44;border-radius:30px;padding:7px 11px;
+  z-index:3;
+}
+.traffic-legend i{width:6px;height:6px;border-radius:50%;display:inline-block;background:#8ff5ff;box-shadow:0 0 8px #51e2ed;margin-left:4px}
+.traffic-legend .legend-up{background:#c7a7ff;box-shadow:0 0 8px #b17aff}
+.main-pops{position:relative;margin-top:0}
+.primary-pop{animation:popDataGlow 3.8s ease-in-out infinite}
+.primary-pop:nth-child(2){animation-delay:1.4s}
+@keyframes popDataGlow{0%,100%{box-shadow:0 0 0 rgba(81,226,237,0)}50%{box-shadow:0 0 22px rgba(81,226,237,.14),inset 0 0 18px rgba(81,226,237,.05)}}
+.pop-core{position:relative;z-index:4}
+.pop-core:after{content:"";position:absolute;inset:-5px;border:1px solid #51e2ed55;border-radius:15px;animation:coreSignal 2.8s ease-out infinite;pointer-events:none}
+@keyframes coreSignal{0%{transform:scale(.98);opacity:.7}100%{transform:scale(1.12);opacity:0}}
+@media(max-width:560px){
+  .traffic-split{width:88%;height:68px}
+  .traffic-split:before{height:30px}
+  .traffic-split:after{top:29px}
+  .traffic-legend{font-size:7px;bottom:-2px}
+}
+@media(prefers-reduced-motion:reduce){
+  .traffic-route,.primary-pop,.pop-core:after{animation:none!important}
+  .traffic-packet{display:none}
+}
