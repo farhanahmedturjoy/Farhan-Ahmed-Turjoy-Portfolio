@@ -223,3 +223,27 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 .foot-divider{color:#526681}
 @media(max-width:560px){.pop-map{padding:18px 12px}.main-pops{gap:10px}.other-sites{grid-template-columns:1fr}.other-sites .pop-node{min-height:58px;flex-direction:row}.pop-map-foot{flex-wrap:wrap;text-align:center}}
 @media(prefers-reduced-motion:reduce){.pop-flow,.pop-status{animation:none!important}}
+
+/* Restore operations-flow animation alongside the POP topology visual */
+.hero-designation{color:#78dce8;font-size:10px;letter-spacing:1.45px;line-height:1.8;margin:0 0 10px;text-transform:uppercase}
+.hero-intro{margin-bottom:12px}
+.restored-workflow{margin-top:20px;border-color:#5bcbdc35;background:linear-gradient(145deg,#111d2cdd,#0c1422dd)}
+.workflow-heading{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.workflow-kicker{font:700 9px var(--display);letter-spacing:1.5px;color:#76dce7}
+.workflow-heading-line{height:1px;flex:1;min-width:25px;background:linear-gradient(90deg,#4ccfdf55,transparent)}
+.workflow-heading small{font-size:10px;color:#8fa1bd}
+.workflow-main{gap:10px}
+.workflow-node{border-color:#55c8dc35;transition:transform .3s,border-color .3s,box-shadow .3s}
+.workflow-node:hover{transform:translateY(-4px);border-color:#58dce8aa;box-shadow:0 8px 24px #4bc9e51c}
+.workflow-pop{border-color:#51e2ed66;box-shadow:inset 0 0 22px #51e2ed0d}
+.workflow-icon{color:#68dce8}
+.workflow-remote{border-color:#6de8c244}
+.workflow-pulse{background:var(--mint)}
+/* Coordinated cyan-blue-violet profile ring */
+.portrait-frame{background:conic-gradient(from 25deg,#55dce8 0%,#648dff 48%,#a879ee 76%,#55dce8 100%)!important;padding:7px;box-shadow:0 0 28px rgba(85,220,232,.2),0 0 62px rgba(104,137,255,.14)!important}
+.portrait-frame:before{border:1px solid rgba(105,174,255,.48)!important}
+.portrait-inner{border:4px solid #0b1220!important;background:#080d18}
+.orbit-one{border-left-color:rgba(85,220,232,.8)!important}
+.orbit-one span{background:#55dce8!important;box-shadow:0 0 14px #55dce8!important}
+@media(max-width:700px){.restored-workflow .workflow-main{flex-direction:column}.restored-workflow .workflow-node{width:100%;max-width:none;min-height:82px;flex:none}.restored-workflow .workflow-link{width:2px;height:25px;flex:none;background:#344b6c}.restored-workflow .workflow-link i{top:-30%;left:-2px;width:6px;height:30%;animation:workflowVertical 1.8s linear infinite}.restored-workflow .workflow-remote{align-items:flex-start;flex-wrap:wrap}.restored-workflow .remote-tag{margin-left:21px}}
+@media(prefers-reduced-motion:reduce){.restored-workflow .workflow-link i{animation:none!important}}
