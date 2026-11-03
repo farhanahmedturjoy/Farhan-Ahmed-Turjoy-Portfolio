@@ -461,3 +461,28 @@ main,.header,.footer{position:relative;z-index:1}
   .traffic-route,.primary-pop,.pop-core:after{animation:none!important}
   .traffic-packet{display:none}
 }
+
+
+/* Remote office uplinks: Rajgonj -> Mozumdarhat + Modinabazar; Choyani -> Jahanabad */
+.remote-links{position:relative;width:100%;height:70px;margin:-2px auto 0;overflow:visible}
+.remote-link-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.remote-route{fill:none;stroke-width:2;stroke-dasharray:5 7;vector-effect:non-scaling-stroke;animation:remoteDash 1.7s linear infinite}
+.rajgonj-route{stroke:#51dce8aa;filter:drop-shadow(0 0 4px #51dce866)}
+.choyani-route{stroke:#b17affbb;filter:drop-shadow(0 0 4px #b17aff77)}
+@keyframes remoteDash{to{stroke-dashoffset:-24}}
+.remote-packet{fill:#c6fbff;stroke:#51dce8;stroke-width:1.5;filter:drop-shadow(0 0 5px #51dce8)}
+.choyani-packet{fill:#e0caff;stroke:#b17aff;filter:drop-shadow(0 0 5px #b17aff)}
+.other-sites .pop-node{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.other-sites .pop-node small{font:700 8px var(--display);letter-spacing:1px;color:#82a0c1}
+.remote-rajgonj{border-color:#51dce855}
+.remote-choyani{border-color:#b17aff66}
+@media(max-width:560px){
+ .remote-links{height:55px}
+ .remote-route{stroke-width:2.5}
+ .other-sites{grid-template-columns:1fr}
+ .remote-links{display:none}
+ .other-sites .pop-node{min-height:65px;align-items:flex-start;padding-left:18px}
+ .other-sites .pop-node:before{content:"";position:absolute;left:7px;top:-13px;height:13px;width:2px;background:#51dce8aa}
+ .other-sites .remote-choyani:before{background:#b17affbb}
+}
+@media(prefers-reduced-motion:reduce){.remote-route{animation:none!important}.remote-packet{display:none}}
