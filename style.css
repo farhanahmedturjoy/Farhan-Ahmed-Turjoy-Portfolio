@@ -336,3 +336,24 @@ body{overflow-x:clip;}
 .contact-icon{transition:transform .22s ease,border-color .22s ease}
 @media(max-width:620px){.contact-links{grid-template-columns:1fr}.contact-links .contact-link{min-height:76px;padding:14px 15px}}
 @media(prefers-reduced-motion:reduce){.contact-links .contact-link,.contact-icon,.contact-arrow{transition:none!important}}
+
+
+/* Restore the original animated profile portrait and orbit system */
+.portrait-stage{animation:heroEnter 1.2s .15s cubic-bezier(.2,.8,.2,1) both!important}
+.stage-glow{filter:blur(22px)!important;opacity:1!important;animation:glowBreath 6s ease-in-out infinite!important}
+.portrait-frame{animation:floatPortrait 7s ease-in-out infinite!important}
+.portrait-frame:before{animation:ringPulse 4s ease-in-out infinite!important}
+.orbit-one{animation:orbitSpin 26s linear infinite!important}
+.orbit-two{animation:orbitSpin 34s linear infinite reverse!important}
+.orbit-three{animation:orbitSpin 65s linear infinite!important}
+.orbit-chip{animation:chipFloat 6s ease-in-out infinite!important}
+.chip-two{animation-delay:-3s!important}
+.orbit-one span{animation:orbitDotPulse 3s ease-in-out infinite!important}
+.orbit-two span{animation:orbitDotPulse 3.6s ease-in-out infinite reverse!important}
+@keyframes orbitDotPulse{50%{transform:scale(1.35);opacity:.65}}
+@media(max-width:800px){
+  .portrait-stage{animation:heroEnter 1.2s .15s cubic-bezier(.2,.8,.2,1) both!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .portrait-stage,.stage-glow,.portrait-frame,.portrait-frame:before,.orbit-one,.orbit-two,.orbit-three,.orbit-chip,.orbit-one span,.orbit-two span{animation:none!important}
+}
