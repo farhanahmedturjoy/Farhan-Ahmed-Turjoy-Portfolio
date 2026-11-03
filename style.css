@@ -256,3 +256,32 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 .company-identity{display:flex;align-items:center;gap:18px}
 .company-logo{display:block;width:112px;height:78px;object-fit:contain;background:#fff;border-radius:12px;padding:5px;flex:none;box-shadow:0 8px 28px rgba(0,0,0,.18)}
 @media(max-width:650px){.company-identity{align-items:flex-start;gap:12px}.company-logo{width:88px;height:66px}.experience-heading{gap:14px;flex-wrap:wrap}}
+
+
+/* Performance pass: prioritize low-cost transforms and keep the page responsive */
+html{scroll-behavior:smooth;scroll-padding-top:82px;}
+body{overflow-x:clip;}
+.header{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(9,13,24,.96);}
+.ambient{filter:none;opacity:.055;animation:none;}
+.stage-glow{filter:none;animation:none;opacity:.75;}
+.orbit,.orbit-one span,.orbit-two span,.orbit-three,.portrait-frame:before{animation:none!important;}
+.portrait-frame{animation:none!important;}
+.reveal{will-change:opacity,transform;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1);}
+.reveal:not(.in-view){opacity:0;transform:translate3d(0,16px,0);}
+.reveal.in-view{opacity:1;transform:translate3d(0,0,0);}
+.skill-card,.project-card,.topo-node,.topo-endpoint,.pop-node,.workflow-node,.btn,.contact-links a{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;}
+.skill-card:hover,.project-card:hover,.topo-node:hover,.topo-endpoint:hover,.pop-node:hover,.workflow-node:hover{transform:translateY(-2px);}
+.topo-link i,.workflow-link i,.branch-packet,.pop-flow{animation-duration:3.2s!important;}
+.status-dot,.current i,.live-pulse,.workflow-pulse,.pop-status{animation-duration:3.4s!important;}
+@media(max-width:800px){
+  .header{background:#090d18;}
+  .ambient{display:none;}
+  .portrait-stage{animation:none;}
+  .hero-text{animation:none;}
+  .hero{min-height:auto;padding-top:58px;padding-bottom:78px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  .reveal:not(.in-view){opacity:1;transform:none;}
+}
