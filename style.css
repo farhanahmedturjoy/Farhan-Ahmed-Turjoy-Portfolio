@@ -110,3 +110,10 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 /* Make portrait loading and cropping robust across GitHub Pages/CDN MIME handling */
 .portrait-inner{border-radius:50%;overflow:hidden}
 .portrait-inner img{border-radius:50%;object-fit:cover;object-position:50% 30%;width:100%;height:100%;display:block}
+
+/* Profile photo picker */
+.portrait-frame{position:relative}
+.photo-upload{position:absolute;right:7px;bottom:18px;z-index:5;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;border:2px solid #0b1220;background:linear-gradient(135deg,#53e2eb,#6588ff);color:#07111d;font:500 30px/1 var(--display);cursor:pointer;box-shadow:0 5px 22px #4acfe955;transition:transform .22s,box-shadow .22s}
+.photo-upload:hover,.photo-upload:focus-visible{transform:scale(1.1);box-shadow:0 0 0 5px #54dce72b,0 7px 26px #4acfe977;outline:none}
+.photo-upload-input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:620px){.photo-upload{right:4px;bottom:12px;width:40px;height:40px}}
