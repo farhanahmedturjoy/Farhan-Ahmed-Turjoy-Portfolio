@@ -251,3 +251,8 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 .contact-links{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:850px){.contact-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.contact-links{grid-template-columns:1fr}}
+
+/* Company identity in the experience card */
+.company-identity{display:flex;align-items:center;gap:18px}
+.company-logo{display:block;width:112px;height:78px;object-fit:contain;background:#fff;border-radius:12px;padding:5px;flex:none;box-shadow:0 8px 28px rgba(0,0,0,.18)}
+@media(max-width:650px){.company-identity{align-items:flex-start;gap:12px}.company-logo{width:88px;height:66px}.experience-heading{gap:14px;flex-wrap:wrap}}
