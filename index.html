@@ -104,7 +104,17 @@
       <div class="section-head"><h2 class="section-title">ISP network <span class="gradient-text">overview.</span></h2><p>Main POP locations and the other sites I support.</p></div>
       <div class="topology-panel pop-map">
         <div class="pop-core"><span class="pop-icon">⌘</span><b>ISP CORE NETWORK</b><small>Routing · Switching · Monitoring</small></div>
-        <div class="pop-split"><span class="pop-flow"></span></div>
+        <div class="pop-split traffic-split" aria-label="Animated two-way traffic between the ISP core and the two main POPs">
+          <svg class="traffic-lines" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+            <path class="traffic-route" d="M500 0 V34 H250 V100"/>
+            <path class="traffic-route" d="M500 0 V34 H750 V100"/>
+            <circle class="traffic-packet packet-down" r="7"><animateMotion dur="2.8s" repeatCount="indefinite" path="M500 0 V34 H250 V100"/></circle>
+            <circle class="traffic-packet packet-up" r="5"><animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M500 0 V34 H250 V100"/></circle>
+            <circle class="traffic-packet packet-down packet-delay" r="7"><animateMotion dur="3.1s" begin=".7s" repeatCount="indefinite" path="M500 0 V34 H750 V100"/></circle>
+            <circle class="traffic-packet packet-up packet-delay" r="5"><animateMotion dur="2.5s" begin=".4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M500 0 V34 H750 V100"/></circle>
+          </svg>
+          <span class="traffic-legend"><i class="legend-down"></i> DATA OUT <i class="legend-up"></i> DATA IN</span>
+        </div>
         <div class="main-pops">
           <div class="pop-node primary-pop"><span class="pop-icon">▤</span><b>RAJGONJ</b><small>MAIN POP</small><i class="pop-status"></i></div>
           <div class="pop-node primary-pop"><span class="pop-icon">▤</span><b>CHOYANI</b><small>MAIN POP</small><i class="pop-status"></i></div>
