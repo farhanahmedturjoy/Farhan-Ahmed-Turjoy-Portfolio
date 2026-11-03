@@ -142,3 +142,57 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 .orbit-one{border-left-color:rgba(255,64,88,.75)}
 .orbit-one span{background:var(--accent-red);box-shadow:0 0 18px var(--accent-red)}
 @media(prefers-reduced-motion:reduce){.portrait-frame,.portrait-frame:before{animation:none!important}}
+
+/* Clean black profile ring and compact ISP operations workflow */
+.portrait-frame{background:#05070b!important;padding:8px;box-shadow:0 0 0 1px #303744,0 12px 38px rgba(0,0,0,.45)!important}
+.portrait-frame:before{border:1px solid rgba(255,255,255,.18)!important}
+.portrait-inner{border:3px solid #05070b!important;background:#080b10}
+.orbit-one{border-left-color:rgba(255,255,255,.5)!important}
+.orbit-one span{background:#d9e1eb!important;box-shadow:0 0 12px rgba(255,255,255,.55)!important}
+.workflow-panel{padding:clamp(18px,3vw,30px);border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#111d2cdd,#0c1422dd);overflow:hidden}
+.workflow-main{display:flex;align-items:center;justify-content:center;gap:10px}
+.workflow-node{min-width:0;flex:1;max-width:230px;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:15px 10px;border:1px solid #6c9eff35;border-radius:12px;background:#101e30;text-align:center}
+.workflow-pop{border-color:#51e2ed55;box-shadow:inset 0 0 22px #51e2ed08}
+.workflow-icon{font-size:24px;color:var(--cyan);line-height:1}
+.workflow-node b,.workflow-decision b,.visit-heading b{font:700 10px var(--display);letter-spacing:.8px}
+.workflow-node small,.workflow-decision small,.visit-heading small{font-size:9px;color:#91a2bd;text-align:center}
+.workflow-link{height:2px;flex:0 1 48px;background:#344b6c;position:relative;overflow:hidden}
+.workflow-link i{position:absolute;top:-2px;left:-30%;width:30%;height:6px;background:linear-gradient(90deg,transparent,var(--cyan),#fff,transparent);filter:drop-shadow(0 0 4px var(--cyan));animation:workflowPacket 1.8s linear infinite}
+.workflow-link:nth-of-type(2) i{animation-delay:.6s}
+@keyframes workflowPacket{to{left:110%}}
+.workflow-remote{margin:22px auto 0;max-width:760px;display:flex;align-items:center;gap:13px;padding:15px 18px;border:1px solid #55d9bd44;border-radius:11px;background:#6de8c20a}
+.workflow-remote>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.workflow-remote b{font:700 10px var(--display);letter-spacing:1px}
+.workflow-remote small{font-size:10px;line-height:1.5;color:#9aabc4}
+.workflow-pulse{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 #6de8c277;animation:pulse 2s infinite}
+.remote-tag{margin-left:auto;font-size:8px;letter-spacing:1px;color:#8ce5c7;white-space:nowrap}
+.workflow-branch{height:35px;display:flex;justify-content:center;position:relative;color:#6f91bd}
+.workflow-branch span{height:100%;width:1px;background:linear-gradient(var(--mint),#6687ae)}
+.workflow-branch i{position:absolute;bottom:-2px;font-style:normal;font-size:13px}
+.workflow-decision{max-width:420px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:13px;padding:13px 18px;border:1px solid #7186a84a;border-radius:11px;background:#121d2d;text-align:left}
+.workflow-decision>div{display:flex;flex-direction:column;gap:5px}
+.workflow-visit{max-width:760px;margin:14px auto 0;padding:17px;border:1px solid #6c9eff2b;border-radius:12px;background:#0d1726}
+.visit-heading{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.visit-heading small{width:100%}
+.visit-sites{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+.visit-site{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 8px;border:1px solid #6c9eff2b;border-radius:9px;background:#142238;color:#dce7f8}
+.visit-site span{font-size:18px;color:var(--cyan);animation:sitePing 2.5s ease-in-out infinite}
+.visit-site:nth-child(2) span{animation-delay:.5s}.visit-site:nth-child(3) span{animation-delay:1s}
+.visit-site b{font:700 9px var(--display);letter-spacing:.5px}
+@keyframes sitePing{50%{transform:translateY(-3px);opacity:.65}}
+.workflow-foot{display:flex;align-items:center;gap:9px;margin-top:18px;font-size:9px;letter-spacing:1.2px;color:#8fa5c4}
+.workflow-foot-note{margin-left:auto;font-size:10px;letter-spacing:0;color:#71829f}
+.about-content p,.hero-desc{line-height:1.8}
+.experience-card li{font-size:12px;line-height:1.7}
+.project-card p{font-size:11px;line-height:1.7}
+.tags span{font-size:10px}
+@media(max-width:700px){
+.workflow-main{flex-direction:column}.workflow-node{width:100%;max-width:none;min-height:82px;flex:none}
+.workflow-link{width:2px;height:25px;flex:none;background:#344b6c}
+.workflow-link i{top:-30%;left:-2px;width:6px;height:30%;animation:workflowVertical 1.8s linear infinite}
+@keyframes workflowVertical{to{top:110%}}
+.workflow-remote{align-items:flex-start;flex-wrap:wrap}.remote-tag{margin-left:21px}
+.visit-sites{grid-template-columns:1fr}.workflow-foot{flex-wrap:wrap}
+.workflow-foot-note{width:100%;margin-left:17px}
+}
+@media(prefers-reduced-motion:reduce){.workflow-link i,.visit-site span{animation:none!important}}
