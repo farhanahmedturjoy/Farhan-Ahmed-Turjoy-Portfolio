@@ -38,3 +38,11 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 } else {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
 }
+
+/* Keep section reveals modest and honor motion preferences. */
+if (!reduceMotion) {
+  const sections = document.querySelectorAll('main > .section');
+  sections.forEach((section, i) => {
+    section.style.setProperty('--section-index', i);
+  });
+}
