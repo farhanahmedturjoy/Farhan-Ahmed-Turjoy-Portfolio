@@ -83,3 +83,26 @@ html{scroll-behavior:smooth;scroll-padding-top:76px}
 @media(max-width:950px){.topology-track{flex-wrap:wrap;gap:10px}.topo-node{width:calc(25% - 12px)}.topo-link{display:none}}
 @media(max-width:620px){.topology-panel{padding:15px}.topo-node{width:calc(50% - 8px);min-height:100px}.topology-foot{flex-wrap:wrap}.topo-note{width:100%;margin-left:16px}}
 @media(prefers-reduced-motion:reduce){.topo-link i,.live-pulse{animation:none!important}}
+
+/* ISP topology: clear backbone followed by customer-side service branches */
+.topology-panel{padding:clamp(18px,3vw,30px)}
+.topo-backbone{display:flex;align-items:center;justify-content:center;gap:9px}
+.topo-backbone .topo-node{width:clamp(105px,14%,150px);flex:1}
+.topo-link{max-width:48px}
+.topo-branch{height:45px;position:relative;display:flex;justify-content:center}
+.branch-stem{height:100%;width:1px;background:linear-gradient(var(--cyan),#5376a9)}
+.branch-packet{position:absolute;top:0;width:5px;height:12px;border-radius:5px;background:#fff;box-shadow:0 0 12px var(--cyan);animation:branchFlow 1.8s ease-in infinite}
+@keyframes branchFlow{to{top:100%;opacity:.15}}
+.topo-customer{border:1px solid #64bce83d;border-radius:15px;background:linear-gradient(130deg,#132338b8,#0e1725b8);padding:20px}
+.topo-customer-title{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
+.topo-customer-title b{font:700 11px var(--display);letter-spacing:1px}
+.topo-customer-title small{font-size:10px;color:#8fa1bd}
+.topo-endpoints{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.topo-endpoint{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 10px;border:1px solid #6c9eff2e;border-radius:12px;background:#101e30;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s}
+.topo-endpoint:hover{transform:translateY(-4px);border-color:#58dce8a8;box-shadow:0 8px 22px #4bc9e51c}
+.topo-endpoint>span{font-size:26px;filter:drop-shadow(0 0 8px #5ce1ed20)}
+.topo-endpoint b{font:700 10px var(--display)}
+.topo-endpoint small{font-size:9px;color:#8fa1bd}
+@media(max-width:950px){.topo-backbone{flex-wrap:wrap}.topo-backbone .topo-node{flex:0 1 calc(33.333% - 12px);width:auto}.topo-link{display:none}}
+@media(max-width:620px){.topo-backbone .topo-node{flex-basis:calc(50% - 8px)}.topo-endpoints{grid-template-columns:repeat(2,minmax(0,1fr))}.topo-customer-title{flex-wrap:wrap}.topo-customer-title small{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.branch-packet{animation:none}}
