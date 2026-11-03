@@ -514,3 +514,21 @@ body:after{display:none!important}
 .reveal{transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)!important}
 .reveal:not(.in-view){transform:translate3d(0,12px,0)!important}
 @media(prefers-reduced-motion:reduce){.portrait-stage,.portrait-frame,.orbit,.orbit-one span,.orbit-two span,.orbit-three,.stage-glow{animation:none!important}}
+
+
+/* Smooth motion + scroll performance tune */
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{overscroll-behavior-y:contain}
+.header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(9,13,24,.96)!important}
+.ambient{animation:none!important;filter:blur(58px)!important;opacity:.07!important}
+.hero-text,.portrait-stage{animation:heroEnter .9s cubic-bezier(.22,.75,.25,1) both}
+.reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .72s cubic-bezier(.22,.75,.25,1),transform .72s cubic-bezier(.22,.75,.25,1);will-change:auto}
+.reveal.in-view{opacity:1;transform:translate3d(0,0,0)}
+.skill-card,.project-card,.topo-node,.topo-endpoint,.btn,.contact-links a{transition-duration:.32s}
+.portrait-frame{animation:floatPortrait 9s ease-in-out infinite}
+.orbit-one{animation:orbitSpin 42s linear infinite}
+.orbit-two{animation:orbitSpin 52s linear infinite reverse}
+.orbit-three{animation:orbitSpin 75s linear infinite}
+.stage-glow{animation:glowBreath 9s ease-in-out infinite}
+@media(max-width:620px){html{scroll-padding-top:70px}.reveal{transform:translate3d(0,14px,0);transition-duration:.58s}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ambient,.hero-text,.portrait-stage,.portrait-frame,.orbit-one,.orbit-two,.orbit-three,.stage-glow{animation:none!important}.reveal{opacity:1;transform:none;transition:none}}
