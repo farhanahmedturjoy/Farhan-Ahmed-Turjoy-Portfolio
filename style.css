@@ -390,3 +390,25 @@ body{overflow-x:clip;}
 @media(prefers-reduced-motion:reduce){
   :where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date){transition:none!important}
 }
+
+
+/* Motion upgrade: scroll progress, soft pointer light and responsive 3D cards */
+:root{--scroll-progress:0;--pointer-x:50vw;--pointer-y:35vh}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(100,155,220,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(100,155,220,.075) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,black,transparent 78%);animation:gridDrift 32s linear infinite}
+@keyframes gridDrift{to{background-position:58px 58px}}
+body:after{content:"";position:fixed;z-index:0;inset:0;pointer-events:none;background:radial-gradient(380px circle at var(--pointer-x) var(--pointer-y),rgba(62,183,232,.09),transparent 68%);opacity:.85}
+main,.header,.footer{position:relative;z-index:1}
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;background:#ffffff0b;pointer-events:none}
+.scroll-progress span{display:block;width:100%;height:100%;transform:scaleX(var(--scroll-progress));transform-origin:left;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet));box-shadow:0 0 14px #55dce8aa}
+.skill-card,.project-card,.experience-card,.education-item,.contact-link,.topology-panel,.workflow-node{transform-style:preserve-3d;will-change:transform}
+.skill-card,.project-card,.experience-card,.education-item{transition:transform .22s ease,border-color .25s ease,box-shadow .25s ease}
+.skill-card:hover,.project-card:hover,.experience-card:hover,.education-item:hover{box-shadow:0 18px 44px rgba(0,0,0,.24),0 0 24px rgba(81,226,237,.07)}
+.section-title{background-image:linear-gradient(90deg,transparent,rgba(81,226,237,.08),transparent);background-size:220% 100%;background-repeat:no-repeat;animation:titleSweep 9s ease-in-out infinite}
+@keyframes titleSweep{0%,65%{background-position:120% 0}100%{background-position:-120% 0}}
+.tags span{transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.tags span:hover{transform:translateY(-3px) scale(1.035)}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn:after{content:"";position:absolute;inset:-40% auto -40% -45%;width:35%;transform:skewX(-22deg);background:linear-gradient(90deg,transparent,#ffffff35,transparent);transition:left .65s ease;z-index:-1}
+.btn:hover:after{left:125%}
+@media(max-width:800px){body:after{display:none}body:before{opacity:.08}}
+@media(prefers-reduced-motion:reduce){body:before,.section-title{animation:none!important}.scroll-progress{display:none}.skill-card,.project-card,.experience-card,.education-item{will-change:auto}}
