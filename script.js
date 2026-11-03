@@ -47,18 +47,3 @@ if (!reduceMotion) {
   });
 }
 
-/* Let the visitor preview a chosen profile image locally in the circular portrait.
-   The file is not uploaded to GitHub or stored on a server. */
-const photoInput = document.getElementById('profile-photo-input');
-const profilePhoto = document.getElementById('profile-photo');
-if (photoInput && profilePhoto) {
-  photoInput.addEventListener('change', () => {
-    const file = photoInput.files && photoInput.files[0];
-    if (!file || !file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      if (typeof reader.result === 'string') profilePhoto.src = reader.result;
-    });
-    reader.readAsDataURL(file);
-  });
-}
