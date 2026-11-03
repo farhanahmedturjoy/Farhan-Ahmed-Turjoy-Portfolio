@@ -357,3 +357,36 @@ body{overflow-x:clip;}
 @media(prefers-reduced-motion:reduce){
   .portrait-stage,.stage-glow,.portrait-frame,.portrait-frame:before,.orbit-one,.orbit-two,.orbit-three,.orbit-chip,.orbit-one span,.orbit-two span{animation:none!important}
 }
+
+
+/* Consistent bright hover feedback for every interactive option */
+:where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date){
+  -webkit-tap-highlight-color:transparent;
+}
+:where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date):hover{
+  color:#fff!important;
+  border-color:rgba(104,225,255,.9)!important;
+  background-color:rgba(77,190,232,.17);
+  box-shadow:0 0 0 1px rgba(104,225,255,.16),0 0 18px rgba(74,190,255,.24),0 8px 25px rgba(0,0,0,.22);
+  text-shadow:0 0 10px rgba(180,239,255,.22);
+}
+:where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date):hover :is(span,small,b,strong,i,svg){
+  color:#eafcff!important;
+}
+:where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date):focus-visible{
+  outline:2px solid #68e1ff!important;
+  outline-offset:4px;
+  box-shadow:0 0 0 5px rgba(104,225,255,.16),0 0 22px rgba(74,190,255,.28);
+}
+.nav a:hover,.back-top:hover{color:#8ff3ff!important;text-shadow:0 0 13px rgba(104,225,255,.65)}
+.btn-primary:hover,.btn-outline:hover,.nav-cta:hover{
+  filter:brightness(1.22) saturate(1.16);
+}
+.contact-links .contact-link:hover{
+  border-color:rgba(104,225,255,.85)!important;
+  background:linear-gradient(135deg,rgba(72,185,225,.2),rgba(255,255,255,.07))!important;
+  box-shadow:0 0 0 1px rgba(104,225,255,.13),0 0 24px rgba(74,190,255,.2),0 12px 30px rgba(0,0,0,.2)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  :where(a,button,[role="button"],.tags span,.topo-node,.topo-endpoint,.workflow-node,.visit-site,.pop-node,.certifications>div,.date){transition:none!important}
+}
