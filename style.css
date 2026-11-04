@@ -277,3 +277,25 @@ body{scroll-behavior:smooth}
  .workflow-step,.workflow-step>span{transition:none}
  .workflow-step.reveal{opacity:1;transform:none}
 }
+
+/* Decent, understated workflow finish */
+.workflow-simple{margin-top:30px;gap:0;padding:5px 0}
+.workflow-simple:before{top:23px;left:6%;right:6%;background:#344b55;opacity:.8}
+.workflow-step{gap:16px;padding:0 18px 6px;transition:opacity .45s ease,transform .45s ease}
+.workflow-step>span{width:36px;height:36px;flex-basis:36px;border:1px solid #48656b;background:#14232d;color:#9dc9bd;box-shadow:0 0 0 6px #0c1722;font-size:10px}
+.workflow-step h3{font-size:15px;font-weight:700;letter-spacing:-.15px;color:#e1e9ed}
+.workflow-step p{max-width:230px;color:#aab8c0;font-size:12px;line-height:1.75}
+.workflow-step:hover{transform:translateY(-2px)}
+.workflow-step:hover>span{background:#1a353b;box-shadow:0 0 0 6px #0c1722;transform:none}
+.workflow-step:nth-child(n){transition-delay:0s}
+.workflow-step.reveal{transform:translateY(8px)}
+.workflow-step.reveal.in-view{transform:translateY(0)}
+@media(max-width:760px){
+ .workflow-simple{gap:18px;padding-left:3px}
+ .workflow-simple:before{left:20px;top:17px;bottom:17px;background:#344b55}
+ .workflow-step{gap:14px;padding:0}
+ .workflow-step>span{flex:0 0 36px;box-shadow:0 0 0 5px #0c1722}
+ .workflow-step p{max-width:none}
+ .workflow-step:hover{transform:translateX(1px)}
+}
+@media(prefers-reduced-motion:reduce){.workflow-step{transition:none}}
