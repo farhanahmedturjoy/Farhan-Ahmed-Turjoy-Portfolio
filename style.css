@@ -424,3 +424,21 @@ body{scroll-behavior:smooth}
  .hero-art .orbit-two{width:360px;height:360px}
  .role-summary{font-size:12px;line-height:1.65}
 }
+
+
+/* Smaller circular hero portrait */
+.hero-art .profile-frame{
+ width:250px!important;height:250px!important;min-width:250px!important;
+}
+.hero-art .speed-orbit{width:320px;height:320px}
+.hero-art .orbit-two{width:390px;height:390px}
+@media(max-width:950px){
+ .hero-art .profile-frame{width:220px!important;height:220px!important;min-width:220px!important}
+ .hero-art .speed-orbit{width:285px;height:285px}
+ .hero-art .orbit-two{width:345px;height:345px}
+}
+@media(max-width:700px){
+ .hero-art .profile-frame{width:190px!important;height:190px!important;min-width:190px!important}
+ .hero-art .speed-orbit{width:250px;height:250px}
+ .hero-art .orbit-two{width:300px;height:300px}
+}
