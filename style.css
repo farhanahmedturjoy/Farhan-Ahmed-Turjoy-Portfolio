@@ -340,3 +340,56 @@ body{scroll-behavior:smooth}
 .hero-art .speed-orbit,.hero-art .speed-lines{display:block!important;visibility:visible!important}
 @media(max-width:950px){.hero-art{height:420px}.hero-art .profile-frame{width:260px;height:320px}}
 @media(max-width:700px){.hero-art{display:grid!important;height:370px;padding:20px 0 28px}.hero-art .profile-frame{width:230px;height:280px}.hero-art .speed-orbit{width:310px;height:310px}.hero-art .orbit-two{width:370px;height:370px}.hero-art .speed-caption{bottom:3px}}
+
+
+/* Reliable portrait + visible animated network field */
+.hero-art{
+ display:grid!important;visibility:visible!important;opacity:1!important;
+ width:100%;height:470px;min-width:0;position:relative;place-items:center;
+ isolation:isolate;overflow:hidden;background:transparent;
+}
+.hero-art .profile-frame{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ position:relative;z-index:3;width:290px;height:350px;padding:0;
+ border:0;border-radius:46% 46% 12px 12px;background:transparent;
+ box-shadow:0 18px 42px rgba(28,62,70,.16);overflow:hidden;
+}
+.hero-art .portrait{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ width:100%!important;height:100%!important;max-width:none!important;
+ object-fit:cover!important;object-position:center 22%!important;
+ border:0!important;border-radius:46% 46% 12px 12px!important;
+}
+.hero-art .speed-orbit{
+ display:block!important;visibility:visible!important;opacity:.42!important;
+ position:absolute;z-index:1;width:390px;height:390px;
+ border:1px solid #4d9c94;border-radius:50%;
+ animation:orbit-pulse 4s ease-out infinite!important;
+}
+.hero-art .orbit-two{width:470px;height:470px;animation-delay:2s!important}
+.hero-art .speed-lines{
+ display:block!important;visibility:visible!important;opacity:.5!important;
+ position:absolute;z-index:0;inset:0;
+ background:repeating-linear-gradient(165deg,transparent 0 34px,#72bdb0 35px,transparent 37px 68px);
+ mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);
+ animation:signal-flow 2.4s linear infinite!important;
+}
+.hero-art .speed-caption{z-index:4;bottom:12px}
+.hero-art .signal-dot{animation:signal-blink 1.5s ease-in-out infinite!important}
+.company-brand{width:82px;flex:0 0 82px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.company-logo{width:72px;height:72px;flex:0 0 72px;overflow:hidden;border-radius:10px;background:#fff}
+.company-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.company-caption{font:700 8px/1.35 var(--body);text-align:center;color:#62777e}
+@media(max-width:950px){.hero-art{height:420px}.hero-art .profile-frame{width:260px;height:320px}}
+@media(max-width:700px){
+ .hero-art{display:grid!important;height:370px!important;padding:20px 0 28px!important;margin-top:8px}
+ .hero-art .profile-frame{width:230px;height:280px}
+ .hero-art .speed-orbit{width:310px;height:310px}
+ .hero-art .orbit-two{width:370px;height:370px}
+ .hero-art .speed-caption{bottom:3px}
+ .company-brand{width:72px;flex-basis:72px}
+ .company-logo{width:64px;height:64px;flex-basis:64px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-art .speed-orbit,.hero-art .speed-lines,.hero-art .signal-dot{animation:none!important}
+}
