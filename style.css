@@ -316,3 +316,19 @@ body{scroll-behavior:smooth}
  .hero .lead{font-size:15px}
  .stats{gap:20px}
 }
+
+/* Clean portrait with subtle high-speed network motion */
+.hero-art{height:460px;position:relative;display:grid;place-items:center;isolation:isolate;overflow:hidden;background:transparent}
+.profile-frame{position:relative;z-index:2;width:290px;height:350px;padding:6px;border:1px solid #8fbab4;border-radius:46% 46% 14px 14px;background:#dcebe7;box-shadow:0 18px 45px #163d4b22;overflow:hidden}
+.portrait{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%;border-radius:44% 44% 10px 10px}
+.speed-orbit{position:absolute;z-index:0;width:390px;height:390px;border:1px solid #4d9c94;border-radius:50%;opacity:.32;animation:orbit-pulse 4s ease-out infinite}
+.orbit-two{width:470px;height:470px;animation-delay:2s}
+.speed-lines{position:absolute;z-index:0;inset:0;opacity:.65;background:repeating-linear-gradient(165deg,transparent 0 34px,#72bdb0 35px,transparent 37px 68px);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);animation:signal-flow 2.4s linear infinite}
+.speed-caption{position:absolute;z-index:3;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #cbded9;border-radius:30px;background:#f5faf7;color:#496d6b;font:9px var(--mono);letter-spacing:1px;white-space:nowrap}
+.signal-dot{width:7px;height:7px;border-radius:50%;background:#2f9b7b;box-shadow:0 0 0 4px #2f9b7b22;animation:signal-blink 1.5s ease-in-out infinite}
+@keyframes orbit-pulse{0%{transform:scale(.78);opacity:.42}100%{transform:scale(1.12);opacity:0}}
+@keyframes signal-flow{from{background-position:0 0}to{background-position:0 136px}}
+@keyframes signal-blink{50%{opacity:.45;box-shadow:0 0 0 7px #2f9b7b10}}
+@media(max-width:950px){.profile-frame{width:260px;height:320px}}
+@media(max-width:700px){.hero-art{display:grid;height:370px;padding:20px 0 28px}.profile-frame{width:230px;height:280px}.speed-orbit{width:310px;height:310px}.orbit-two{width:370px;height:370px}.speed-caption{bottom:3px}}
+@media(prefers-reduced-motion:reduce){.speed-orbit,.speed-lines,.signal-dot{animation:none}}
