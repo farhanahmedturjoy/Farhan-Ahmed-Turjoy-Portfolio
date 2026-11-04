@@ -247,3 +247,33 @@ body{font-size:16px;line-height:1.75}
 @media(max-width:900px){.workflow{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.workflow{grid-template-columns:1fr}.workflow article{min-height:unset;padding:18px}.workflow-tools{align-items:flex-start}.workflow-tools b{width:100%}.company-logo{width:54px;height:54px;flex-basis:54px}}
 @media(prefers-reduced-motion:reduce){.workflow article{transition:none}}
+
+/* Smooth, minimal workflow and gentle motion */
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{scroll-behavior:smooth}
+.workflow-simple{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:36px;padding:8px 0}
+.workflow-simple:before{content:"";position:absolute;top:28px;left:7%;right:7%;height:1px;background:linear-gradient(90deg,#347f76,#397d73 70%,#294451);opacity:.65}
+.workflow-step{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:15px;padding:0 22px 8px;transition:transform .55s cubic-bezier(.2,.75,.25,1),opacity .55s ease}
+.workflow-step>span{z-index:1;display:grid;place-items:center;width:42px;height:42px;border:1px solid #4eaa99;border-radius:50%;background:#10232f;color:#82e5d1;font:11px "DM Mono",monospace;box-shadow:0 0 0 7px #0c1722;transition:background .35s ease,box-shadow .35s ease,transform .35s ease}
+.workflow-step h3{margin:0 0 6px;color:#edf5f5;font:700 16px "Manrope",sans-serif}
+.workflow-step p{max-width:220px;margin:0;color:#aebfc7;font-size:13px;line-height:1.8}
+.workflow-step:hover{transform:translateY(-5px)}
+.workflow-step:hover>span{background:#1d514b;box-shadow:0 0 0 7px #0c1722,0 0 24px #4bd7bf30;transform:scale(1.06)}
+.workflow-step.reveal{opacity:0;transform:translateY(12px)}
+.workflow-step.reveal.in-view{opacity:1;transform:translateY(0)}
+.workflow-step:nth-child(2){transition-delay:.08s}
+.workflow-step:nth-child(3){transition-delay:.16s}
+.workflow-step:nth-child(4){transition-delay:.24s}
+@media(max-width:760px){
+ .workflow-simple{grid-template-columns:1fr;gap:20px;margin-top:26px;padding:0 0 0 4px}
+ .workflow-simple:before{top:18px;bottom:18px;left:24px;right:auto;width:1px;height:auto;background:linear-gradient(#347f76,#294451)}
+ .workflow-step{flex-direction:row;align-items:flex-start;gap:17px;padding:0 0 3px}
+ .workflow-step>span{flex:0 0 42px;box-shadow:0 0 0 6px #0c1722}
+ .workflow-step p{max-width:none}
+ .workflow-step:hover{transform:translateX(3px)}
+}
+@media(prefers-reduced-motion:reduce){
+ html,body{scroll-behavior:auto}
+ .workflow-step,.workflow-step>span{transition:none}
+ .workflow-step.reveal{opacity:1;transform:none}
+}
