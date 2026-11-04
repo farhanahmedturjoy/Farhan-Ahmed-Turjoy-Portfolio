@@ -442,3 +442,47 @@ body{scroll-behavior:smooth}
  .hero-art .speed-orbit{width:250px;height:250px}
  .hero-art .orbit-two{width:300px;height:300px}
 }
+
+
+/* Smooth high-speed fibre / Wi-Fi motion */
+.hero-art .speed-orbit{
+ animation: orbit-spin 7s linear infinite!important;
+ transform-origin:center;
+ will-change:transform,opacity;
+}
+.hero-art .orbit-two{
+ animation: orbit-spin-reverse 10s linear infinite!important;
+}
+.hero-art .speed-lines{
+ background:
+  repeating-linear-gradient(165deg,transparent 0 20px,rgba(67,166,157,.55) 21px,transparent 23px 42px),
+  repeating-linear-gradient(12deg,transparent 0 54px,rgba(95,181,202,.24) 55px,transparent 57px 108px);
+ background-size:100% 100%,100% 100%;
+ animation: fibre-rush .85s linear infinite!important;
+ will-change:background-position,opacity;
+}
+.hero-art .signal-dot{
+ animation: signal-blink .8s ease-in-out infinite!important;
+}
+@keyframes orbit-spin{
+ from{transform:rotate(0deg) scale(.98);opacity:.25}
+ 50%{opacity:.58}
+ to{transform:rotate(360deg) scale(1.02);opacity:.25}
+}
+@keyframes orbit-spin-reverse{
+ from{transform:rotate(360deg) scale(1.02);opacity:.18}
+ 50%{opacity:.42}
+ to{transform:rotate(0deg) scale(.98);opacity:.18}
+}
+@keyframes fibre-rush{
+ from{background-position:0 0,0 0;opacity:.25}
+ to{background-position:0 180px,0 -120px;opacity:.62}
+}
+@keyframes signal-blink{
+ 0%,100%{opacity:.45;box-shadow:0 0 0 0 rgba(53,169,151,.18)}
+ 50%{opacity:1;box-shadow:0 0 0 7px rgba(53,169,151,0)}
+}
+/* Keep motion fluid while respecting reduced-motion accessibility */
+@media(prefers-reduced-motion:reduce){
+ .hero-art .speed-orbit,.hero-art .speed-lines,.hero-art .signal-dot{animation:none!important}
+}
