@@ -226,3 +226,24 @@ body,html{background:#070d16!important;color:#e6eef3}
  .grid-art{inset:0!important;width:100%;height:100%}
  .company-logo{width:52px;height:52px;flex-basis:52px}
 }
+
+/* Readability and simplified workflow refinement */
+body{font-size:16px;line-height:1.75}
+.hero .lead,.two-col p,.cards p,.role li,.heading p,.contact .lead{color:#bdcbd3;line-height:1.85}
+.hero h1{line-height:1.14}
+.section-label{font-size:11px;letter-spacing:1.5px}
+.cards h3,.role-head h3,.education h3{line-height:1.5}
+.role li{font-size:13px;line-height:1.85}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.workflow article{display:flex;gap:14px;align-items:flex-start;min-height:180px;padding:22px 18px;border:1px solid #34505c;border-radius:9px;background:#132532}
+.workflow article>span{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:50%;background:#17443f;color:#77e2cd;font:11px "DM Mono",monospace}
+.workflow h3{margin:2px 0 9px;color:#eef5f6;font:800 15px "Manrope",sans-serif;line-height:1.45}
+.workflow p{margin:0;color:#b8c8d0;font-size:12px;line-height:1.8}
+.workflow-tools{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:18px;padding:16px 18px;border:1px solid #304956;border-radius:8px;background:#101f2a}
+.workflow-tools b{margin-right:8px;color:#75ddc8;font:10px "DM Mono",monospace;letter-spacing:1px}
+.workflow-tools span{padding:6px 9px;border:1px solid #38515d;border-radius:5px;color:#c5d5dc;font-size:10px}
+.company-logo{width:64px;height:64px;flex:0 0 64px;padding:0}
+.company-logo img{padding:0;object-fit:contain}
+@media(max-width:900px){.workflow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.workflow{grid-template-columns:1fr}.workflow article{min-height:unset;padding:18px}.workflow-tools{align-items:flex-start}.workflow-tools b{width:100%}.company-logo{width:54px;height:54px;flex-basis:54px}}
+@media(prefers-reduced-motion:reduce){.workflow article{transition:none}}
