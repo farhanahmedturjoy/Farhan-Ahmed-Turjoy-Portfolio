@@ -88,67 +88,78 @@
         <div class="experience-heading"><div class="company-identity"><img class="company-logo" src="assets/noakhali-supernet-logo.svg" alt="Noakhali Supernet Broadband company logo"><div><span class="current"><i></i> CURRENT ROLE</span><h3>ISP Network Engineer</h3><p>Noakhali Supernet Broadband</p></div></div><span class="date">NOV 2024 — PRESENT</span></div>
         <div class="experience-divider"></div>
         <ul>
-          <li>Handle L1/L2/L3 network support, including broadband, routing, switching and subscriber connectivity issues.</li>
-          <li>Monitor network links, OLTs and Layer 2 / Layer 3 switches using PRTG, The Dude and OLT Care.</li>
-          <li>Troubleshoot subscriber issues using MikroTik, PPPoE sessions, VLAN checks, ping and traceroute.</li>
-          <li>Work with VSOL and DBC OLTs, L2/L3 switches, fiber uplinks and ONU provisioning.</li>
-          <li>Manage MikroTik user accounts, reseller profiles and bandwidth settings.</li>
-          <li>Record issues in Softify ISP Billing and coordinate field visits for faults that need on-site work.</li>
+          <li>Provide day-to-day L1/L2 network and subscriber support, investigating broadband connectivity, speed and stability complaints.</li>
+          <li>Monitor POP connectivity, network devices, OLTs and switches through PRTG, The Dude and OLT Care.</li>
+          <li>Use MikroTik WinBox to inspect PPPoE sessions, VLAN configuration, routing and customer connectivity.</li>
+          <li>Check PON/ONU status, optical signal levels and device uptime through supported OLT web interfaces when troubleshooting fibre-side issues.</li>
+          <li>Support GPON/EPON access networks, ONU provisioning, reseller connections and bandwidth-related service checks.</li>
+          <li>Maintain issue records and customer/service information in Softify ISP Billing; coordinate with NOC and field teams when on-site work is needed.</li>
+          <li>Support operations across Rajgonj and Choyani POPs and their associated remote office locations.</li>
         </ul>
       </article>
     </section>
 
 
     <section class="section wrap topology-section" id="topology">
-      <div class="section-label"><span>04</span> NETWORK TOPOLOGY</div>
-      <div class="section-head"><h2 class="section-title">ISP network <span class="gradient-text">overview.</span></h2><p>Main POP locations and the other sites I support.</p></div>
-      <div class="topology-panel pop-map">
-        <div class="pop-core"><span class="pop-icon">⌘</span><b>ISP CORE NETWORK</b><small>Routing · Switching · Monitoring</small></div>
-        <div class="pop-split traffic-split" aria-label="Animated two-way traffic between the ISP core and the two main POPs">
-          <svg class="traffic-lines" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
-            <path class="traffic-route" d="M500 0 V34 H250 V100"/>
-            <path class="traffic-route" d="M500 0 V34 H750 V100"/>
-            <circle class="traffic-packet packet-down" r="7"><animateMotion dur="2.8s" repeatCount="indefinite" path="M500 0 V34 H250 V100"/></circle>
-            <circle class="traffic-packet packet-up" r="5"><animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M500 0 V34 H250 V100"/></circle>
-            <circle class="traffic-packet packet-down packet-delay" r="7"><animateMotion dur="3.1s" begin=".7s" repeatCount="indefinite" path="M500 0 V34 H750 V100"/></circle>
-            <circle class="traffic-packet packet-up packet-delay" r="5"><animateMotion dur="2.5s" begin=".4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear" path="M500 0 V34 H750 V100"/></circle>
-          </svg>
-          <span class="traffic-legend"><i class="legend-down"></i> DATA OUT <i class="legend-up"></i> DATA IN</span>
+      <div class="section-label"><span>04</span> NETWORK ARCHITECTURE</div>
+      <div class="section-head"><h2 class="section-title">How the network <span class="gradient-text">connects.</span></h2><p>A practical view of the POP hierarchy and the support workflow across the locations I work with.</p></div>
+
+      <article class="architecture-card">
+        <div class="architecture-heading">
+          <div><span class="diagram-index">DIAGRAM 01</span><h3>POP connectivity map</h3><p>Core network → main POPs → remote offices</p></div>
+          <span class="diagram-type">LOGICAL OVERVIEW</span>
         </div>
-        <div class="main-pops">
-          <div class="pop-node primary-pop"><span class="pop-icon">▤</span><b>RAJGONJ</b><small>MAIN POP</small><i class="pop-status"></i></div>
-          <div class="pop-node primary-pop"><span class="pop-icon">▤</span><b>CHOYANI</b><small>MAIN POP</small><i class="pop-status"></i></div>
+        <div class="network-canvas">
+          <div class="core-tier">
+            <div class="network-node core-node"><span class="node-symbol">⌘</span><div><b>ISP CORE NETWORK</b><small>Central routing · upstream connectivity · network services</small></div><span class="tier-tag">CORE</span></div>
+          </div>
+          <div class="core-trunk"><span class="flow-dot"></span></div>
+          <div class="main-tier">
+            <div class="branch-column rajgonj-column">
+              <div class="branch-line"><span class="flow-dot"></span></div>
+              <div class="network-node main-node"><span class="node-symbol">▤</span><div><b>RAJGONJ POP</b><small>Main distribution point</small></div><span class="node-state">MAIN POP</span></div>
+              <div class="branch-stem"><span class="flow-dot"></span></div>
+              <div class="remote-stack">
+                <div class="network-node remote-node rajgonj-remote"><span class="node-symbol">⌖</span><div><b>MOZUMDARHAT</b><small>Connected through Rajgonj</small></div><span class="node-state">REMOTE</span></div>
+                <div class="network-node remote-node rajgonj-remote"><span class="node-symbol">⌖</span><div><b>MODINABAZAR</b><small>Connected through Rajgonj</small></div><span class="node-state">REMOTE</span></div>
+              </div>
+            </div>
+            <div class="branch-column choyani-column">
+              <div class="branch-line"><span class="flow-dot"></span></div>
+              <div class="network-node main-node"><span class="node-symbol">▤</span><div><b>CHOYANI POP</b><small>Main distribution point</small></div><span class="node-state">MAIN POP</span></div>
+              <div class="branch-stem"><span class="flow-dot"></span></div>
+              <div class="remote-stack">
+                <div class="network-node remote-node choyani-remote"><span class="node-symbol">⌖</span><div><b>JAHANABAD</b><small>Connected through Choyani</small></div><span class="node-state">REMOTE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="diagram-legend"><span><i class="legend-core"></i> Core network</span><span><i class="legend-main"></i> Main POP</span><span><i class="legend-remote"></i> Remote office</span><span><i class="legend-flow"></i> Illustrative traffic path</span></div>
         </div>
-        <div class="pop-other-label"><span></span> REMOTE OFFICE CONNECTIONS <span></span></div>
-        <div class="remote-links" aria-label="Rajgonj connects to Mozumdarhat and Modinabazar. Choyani connects to Jahanabad.">
-          <svg class="remote-link-lines" viewBox="0 0 1000 82" preserveAspectRatio="none" aria-hidden="true">
-            <path class="remote-route rajgonj-route" d="M250 0 V24 H167 V82"/>
-            <path class="remote-route rajgonj-route" d="M250 0 V24 H500 V82"/>
-            <path class="remote-route choyani-route" d="M750 0 V24 H833 V82"/>
-            <circle class="remote-packet rajgonj-packet" r="5"><animateMotion dur="2.6s" repeatCount="indefinite" path="M250 0 V24 H167 V82"/></circle>
-            <circle class="remote-packet rajgonj-packet" r="5"><animateMotion dur="3s" begin=".8s" repeatCount="indefinite" path="M250 0 V24 H500 V82"/></circle>
-            <circle class="remote-packet choyani-packet" r="5"><animateMotion dur="2.8s" begin=".4s" repeatCount="indefinite" path="M750 0 V24 H833 V82"/></circle>
-          </svg>
+        <div class="architecture-notes">
+          <div><b>01 · Core to POP</b><p>The core network is shown as the central layer, with Rajgonj and Choyani represented as the two main POPs.</p></div>
+          <div><b>02 · Rajgonj branch</b><p>Rajgonj provides the shown connection path to Mozumdarhat and Modinabazar.</p></div>
+          <div><b>03 · Choyani branch</b><p>Choyani provides the shown connection path to Jahanabad.</p></div>
         </div>
-        <div class="other-sites">
-          <div class="pop-node remote-rajgonj"><span class="pop-icon">⌖</span><b>MOZUMDARHAT</b><small>RAJGONJ POP</small></div>
-          <div class="pop-node remote-rajgonj"><span class="pop-icon">⌖</span><b>MODINABAZAR</b><small>RAJGONJ POP</small></div>
-          <div class="pop-node remote-choyani"><span class="pop-icon">⌖</span><b>JAHANABAD</b><small>CHOYANI POP</small></div>
+        <p class="diagram-disclaimer">This is a simplified logical illustration of the locations and relationships provided. It is not a live network map and does not display real-time link status, bandwidth or physical fibre routes.</p>
+      </article>
+
+      <article class="architecture-card workflow-card">
+        <div class="architecture-heading">
+          <div><span class="diagram-index">DIAGRAM 02</span><h3>Network operations workflow</h3><p>From service alert or customer report to verification and escalation</p></div>
+          <span class="diagram-type">SUPPORT PROCESS</span>
         </div>
-        <div class="pop-map-foot"><span class="pop-status"></span> Remote monitoring <span class="foot-divider">·</span> On-site support when required</div>
-      </div>
-      <div class="workflow-panel restored-workflow">
-        <div class="workflow-heading"><span class="workflow-kicker">OPERATIONS FLOW</span><span class="workflow-heading-line"></span><small>How I monitor, troubleshoot and support ISP services</small></div>
-        <div class="workflow-main">
-          <div class="workflow-node"><span class="workflow-icon">⌘</span><b>NETWORK MONITORING</b><small>PRTG · The Dude · OLT Care</small></div>
-          <div class="workflow-link"><i></i></div>
-          <div class="workflow-node workflow-pop"><span class="workflow-icon">⌁</span><b>FAULT ANALYSIS</b><small>MikroTik · VLAN · PPPoE</small></div>
-          <div class="workflow-link"><i></i></div>
-          <div class="workflow-node"><span class="workflow-icon">✓</span><b>RESOLUTION</b><small>Remote support · Service checks</small></div>
+        <div class="workflow-steps">
+          <div class="workflow-step"><span class="step-number">01</span><span class="step-icon">◉</span><b>MONITOR</b><p>Review network status and service indicators.</p><small>PRTG · The Dude · OLT Care</small></div>
+          <div class="workflow-connector"><span>→</span></div>
+          <div class="workflow-step"><span class="step-number">02</span><span class="step-icon">⌕</span><b>ISOLATE THE FAULT</b><p>Check reachability, sessions, VLANs and affected network segment.</p><small>WinBox · Ping · Traceroute</small></div>
+          <div class="workflow-connector"><span>→</span></div>
+          <div class="workflow-step"><span class="step-number">03</span><span class="step-icon">⌁</span><b>RESTORE SERVICE</b><p>Apply an appropriate remote fix or coordinate the required action.</p><small>Router · Switch · OLT checks</small></div>
+          <div class="workflow-connector"><span>→</span></div>
+          <div class="workflow-step"><span class="step-number">04</span><span class="step-icon">✓</span><b>VERIFY & RECORD</b><p>Confirm service recovery, update the issue record and follow up.</p><small>Subscriber feedback · Softify</small></div>
         </div>
-        <div class="workflow-branch"><span></span><i>↓</i></div>
-        <div class="workflow-remote"><span class="workflow-pulse"></span><div><b>FIELD TEAM / ON-SITE SUPPORT</b><small>Coordinate a site visit when a fault requires physical inspection, fiber or equipment work.</small></div><span class="remote-tag">WHEN REQUIRED</span></div>
-      </div>
+        <div class="escalation-lane"><span class="escalation-icon">↗</span><div><b>FIELD / NOC ESCALATION — WHEN REQUIRED</b><p>If remote checks cannot resolve the fault, coordinate with the NOC or field team for physical inspection, fibre checks, power or equipment troubleshooting, and then re-verify service.</p></div></div>
+        <p class="diagram-disclaimer">The workflow describes a general support sequence, not a claim that every incident follows identical steps.</p>
+      </article>
     </section>
     <section class="section wrap" id="projects">
       <div class="section-label"><span>05</span> SELECTED PROJECTS</div>
