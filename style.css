@@ -332,3 +332,11 @@ body{scroll-behavior:smooth}
 @media(max-width:950px){.profile-frame{width:260px;height:320px}}
 @media(max-width:700px){.hero-art{display:grid;height:370px;padding:20px 0 28px}.profile-frame{width:230px;height:280px}.speed-orbit{width:310px;height:310px}.orbit-two{width:370px;height:370px}.speed-caption{bottom:3px}}
 @media(prefers-reduced-motion:reduce){.speed-orbit,.speed-lines,.signal-dot{animation:none}}
+
+/* Final hero portrait visibility + responsive layout override */
+.hero-art{display:grid!important;visibility:visible!important;opacity:1!important;min-width:0;width:100%;height:460px;position:relative;place-items:center;isolation:isolate;overflow:hidden;background:transparent}
+.hero-art .profile-frame{display:block!important;visibility:visible!important;opacity:1!important;position:relative;z-index:2;width:290px;height:350px;padding:6px;border:1px solid #8fbab4;border-radius:46% 46% 14px 14px;background:#dcebe7;box-shadow:0 18px 45px #163d4b22;overflow:hidden}
+.hero-art .portrait{display:block!important;visibility:visible!important;opacity:1!important;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 22%;border:0;border-radius:44% 44% 10px 10px;box-shadow:none}
+.hero-art .speed-orbit,.hero-art .speed-lines{display:block!important;visibility:visible!important}
+@media(max-width:950px){.hero-art{height:420px}.hero-art .profile-frame{width:260px;height:320px}}
+@media(max-width:700px){.hero-art{display:grid!important;height:370px;padding:20px 0 28px}.hero-art .profile-frame{width:230px;height:280px}.hero-art .speed-orbit{width:310px;height:310px}.hero-art .orbit-two{width:370px;height:370px}.hero-art .speed-caption{bottom:3px}}
