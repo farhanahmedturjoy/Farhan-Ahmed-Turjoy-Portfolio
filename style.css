@@ -514,3 +514,52 @@ body{scroll-behavior:smooth}
   opacity:1!important;transform:none!important;transition:none!important;
  }
 }
+
+
+/* Mobile-specific motion and layout correction */
+@media(max-width:700px){
+ .hero{
+  min-height:auto!important;
+  grid-template-columns:1fr!important;
+  gap:12px!important;
+  padding-top:48px!important;
+  padding-bottom:58px!important;
+ }
+ .hero-art{
+  height:285px!important;
+  min-height:285px!important;
+  margin:12px auto 0!important;
+  padding:8px 0 24px!important;
+  overflow:visible!important;
+ }
+ .hero-art .profile-frame{
+  width:184px!important;height:184px!important;min-width:184px!important;
+  position:relative;z-index:3;
+ }
+ /* Keep the portrait clean on small screens; avoid oversized orbit clipping */
+ .hero-art .speed-orbit,.hero-art .speed-lines{
+  display:none!important;
+  animation:none!important;
+ }
+ .hero-art .speed-caption{
+  bottom:0!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  font-size:8px!important;
+ }
+ .scroll{position:static!important;display:block;margin-top:24px}
+ .section{padding-top:70px!important}
+ .reveal{
+  transform:translate3d(0,10px,0);
+  transition:opacity .55s ease,transform .55s ease;
+ }
+}
+@media(min-width:390px) and (max-width:700px){
+ .hero-art{height:305px!important;min-height:305px!important}
+ .hero-art .profile-frame{width:196px!important;height:196px!important;min-width:196px!important}
+}
+@media(max-width:389px){
+ .hero-art{height:270px!important;min-height:270px!important}
+ .hero-art .profile-frame{width:172px!important;height:172px!important;min-width:172px!important}
+ .hero h1{font-size:clamp(40px,12vw,54px)!important;letter-spacing:-2px!important}
+}
