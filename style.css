@@ -646,3 +646,34 @@ h1{color:#14243a!important}
 @media(prefers-reduced-motion:reduce){
  .portrait-frame,.orbit-one,.orbit-two,.orbit-three,.stage-glow,.orbit-chip,.traffic-route,.remote-route{animation:none!important}
 }
+
+
+/* Final recruiter-friendly visual polish: airy, calm and professional */
+:root{--bg:#f7f9fc;--panel:#fff;--panel2:#f0f4f8;--text:#1b2d42;--muted:#607187;--line:#e2e8f0}
+html,body{background:#f7f9fc!important;color:#1b2d42!important}
+body{background-image:linear-gradient(180deg,#fbfcfe 0%,#f5f8fb 48%,#fbfcfe 100%)!important}
+.header{box-shadow:0 2px 12px rgba(31,55,80,.035)!important}
+.hero{min-height:650px}
+.hero h1{letter-spacing:-.045em}
+.hero-desc{color:#5f7085!important}
+.section{padding-top:clamp(76px,8vw,104px)}
+.section-label{font-weight:700}
+.skill-card,.project-card,.experience-card,.education-item,.certifications div,
+.topology-panel,.workflow-panel{border-radius:16px!important}
+.skill-card,.project-card,.experience-card,.certifications div{box-shadow:0 4px 16px rgba(31,55,80,.035)!important}
+.skill-card:hover,.project-card:hover,.experience-card:hover,.education-item:hover{transform:translateY(-3px)!important;box-shadow:0 10px 24px rgba(31,55,80,.07)!important}
+.experience-card{background:#fff!important}
+.topo-customer{background:#f7fafc!important;border-color:#dce6ee!important;box-shadow:none!important}
+.topo-node,.topo-endpoint{background:#f7fafc!important;border-color:#dce6ee!important;color:#29445f!important;box-shadow:none!important}
+.topo-node b,.topo-endpoint b{color:#29445f!important}
+.topo-node small,.topo-endpoint small{color:#718399!important}
+.topo-icon,.topo-endpoint>span{color:#367e9f!important;filter:none!important;text-shadow:none!important}
+.topo-link{background:#d6e2eb!important}
+.topo-link i,.branch-packet{background:#4b91ad!important;box-shadow:none!important;filter:none!important}
+.topo-customer-title b{color:#29445f!important}
+.topo-customer-title small{color:#73859a!important}
+.portrait-frame{box-shadow:0 12px 32px rgba(47,89,125,.12)!important}
+.contact-panel{border-radius:18px!important}
+.btn,.nav a,.contact-links a{transition-duration:.25s!important}
+::selection{background:#cfe5f1;color:#173c56}
+@media(max-width:620px){.hero{padding-bottom:58px}.section{padding-top:68px}}
