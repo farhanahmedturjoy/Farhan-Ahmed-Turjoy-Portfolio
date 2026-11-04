@@ -299,3 +299,20 @@ body{scroll-behavior:smooth}
  .workflow-step:hover{transform:translateX(1px)}
 }
 @media(prefers-reduced-motion:reduce){.workflow-step{transition:none}}
+
+/* Clearer professional headline and concise experience */
+.hero{grid-template-columns:minmax(0,1.4fr) minmax(240px,.6fr);gap:45px}
+.hero h1{font-size:clamp(54px,6vw,76px);line-height:1.06;letter-spacing:-2.8px}
+.hero .lead{max-width:570px;font-size:17px;line-height:1.8}
+.hero .status{font-size:10px;letter-spacing:.8px}
+.stats{gap:clamp(18px,3vw,40px)}
+.stats b{font-size:18px}
+.stats span{font-size:12px}
+.experience-summary{margin:22px 0 0;color:#b8c8d0;font-size:14px;line-height:1.85}
+.role .tags{margin-top:18px}
+@media(max-width:700px){
+ .hero{grid-template-columns:1fr;gap:0}
+ .hero h1{font-size:clamp(48px,11vw,65px)}
+ .hero .lead{font-size:15px}
+ .stats{gap:20px}
+}
