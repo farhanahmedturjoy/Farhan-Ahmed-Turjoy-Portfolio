@@ -393,3 +393,34 @@ body{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){
  .hero-art .speed-orbit,.hero-art .speed-lines,.hero-art .signal-dot{animation:none!important}
 }
+
+
+/* Final portrait shape: true circle, not an arch/egg */
+.hero-art .profile-frame{
+ width:320px!important;height:320px!important;min-width:320px;
+ padding:0!important;border:0!important;border-radius:50%!important;
+ background:transparent!important;box-shadow:0 14px 42px rgba(28,62,70,.16);
+ overflow:hidden!important;
+}
+.hero-art .portrait{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+ object-position:center 22%!important;border:0!important;border-radius:50%!important;
+}
+.hero-art .speed-orbit{width:390px;height:390px}
+.hero-art .orbit-two{width:470px;height:470px}
+.role-details{min-width:0;flex:1}
+.role-summary{
+ max-width:610px;margin:9px 0 0;color:var(--muted);
+ font-size:13px;line-height:1.75;
+}
+@media(max-width:950px){
+ .hero-art .profile-frame{width:280px!important;height:280px!important;min-width:280px}
+ .hero-art .speed-orbit{width:340px;height:340px}
+ .hero-art .orbit-two{width:410px;height:410px}
+}
+@media(max-width:700px){
+ .hero-art .profile-frame{width:240px!important;height:240px!important;min-width:240px}
+ .hero-art .speed-orbit{width:300px;height:300px}
+ .hero-art .orbit-two{width:360px;height:360px}
+ .role-summary{font-size:12px;line-height:1.65}
+}
