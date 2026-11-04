@@ -563,3 +563,25 @@ body{scroll-behavior:smooth}
  .hero-art .profile-frame{width:172px!important;height:172px!important;min-width:172px!important}
  .hero h1{font-size:clamp(40px,12vw,54px)!important;letter-spacing:-2px!important}
 }
+
+
+/* Restore dependable native scrolling on desktop and touch devices */
+html,body{
+ height:auto!important;
+ min-height:100%!important;
+ overflow-x:hidden!important;
+ overflow-y:auto!important;
+ overscroll-behavior-y:auto!important;
+ scroll-behavior:auto!important;
+}
+body{position:static!important;touch-action:pan-y!important}
+main{overflow:visible!important}
+.reveal,.reveal.in-view{
+ opacity:1!important;
+ transform:none!important;
+ transition:none!important;
+ will-change:auto!important;
+}
+@media(prefers-reduced-motion:no-preference){
+ html{scroll-behavior:auto!important}
+}
